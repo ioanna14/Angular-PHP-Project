@@ -1,0 +1,26 @@
+<div *ngIf="vacation">
+  <h2>{{vacation.name | uppercase}} Details</h2>
+  <div><span>ID: </span>{{vacation.id}}</div>
+  <div><span>Country: </span>{{vacation.country}}</div>
+  <div><span>Description: </span>{{vacation.description}}</div>
+  <div><span>Tourist Targets: </span>{{vacation.touristTargets}}</div>
+  <div><span>Cost: </span>{{vacation.cost}}</div>
+  <div>
+    <label for="vacation-name">Vacation name: </label>
+    <input id="vacation-name" [(ngModel)]="vacation.name" placeholder="Name"/>
+    <br>
+    <label for="vacation-country">Country: </label>
+    <input id="vacation-country" [(ngModel)]="vacation.country" placeholder="Country"/>
+    <br>
+    <label for="vacation-description">Description: </label>
+    <input id="vacation-description" [(ngModel)]="vacation.description" placeholder="Description"/>
+    <br>
+    <label for="vacation-touristTargets">Tourist Targets: </label>
+    <input id="vacation-touristTargets" [(ngModel)]="vacation.touristTargets" placeholder="Tourist targets"/>
+    <br>
+    <label for="vacation-cost">Cost: </label>
+    <input id="vacation-cost" [(ngModel)]="vacation.cost" placeholder="Cost"/>
+  </div>
+  <button (click)="goBack()">go back</button>
+  <button (click)="save()">save</button>
+</div>

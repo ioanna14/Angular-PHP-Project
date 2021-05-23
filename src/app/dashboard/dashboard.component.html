@@ -1,0 +1,12 @@
+<h2>Top Destinations</h2>
+<div class="departments-menu">
+  <a *ngFor="let vacation of vacations"
+     routerLink="/detail/{{vacation.id}}">
+    {{vacation.name}}
+    {{vacation.country}}
+    {{vacation.description}}
+    {{vacation.touristTargets}}
+    {{vacation.cost}}
+  </a>
+</div>
+
