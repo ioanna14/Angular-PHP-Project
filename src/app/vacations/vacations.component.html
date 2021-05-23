@@ -1,0 +1,29 @@
+
+<h2>My Destinations</h2>
+
+<div>
+  <label for="vacation-name">Name: </label>
+  <input id="vacation-name" #vacationName />
+  <label for="vacation-country">Country: </label>
+  <input id="vacation-country" #vacationCountry />
+  <label for="vacation-description">Description: </label>
+  <input id="vacation-description" #vacationDescription />
+  <label for="vacation-touristTargets">Tourist targets: </label>
+  <input id="vacation-touristTargets" #vacationTouristTargets />
+  <label for="vacation-cost">Cost: </label>
+  <input id="vacation-cost" #vacationCost />
+
+  <button class="add-button" (click)="add(vacationName.value, vacationCountry.value, vacationDescription.value, vacationTouristTargets.value, Number(vacationCost.value)); vacationName.value=''">
+    Add vacation
+  </button>
+</div>
+
+<ul class="vacations">
+  <li *ngFor="let vacation of vacations">
+    <a routerLink="/detail/{{vacation.id}}">
+      <span class="badge">{{vacation.id}}</span> {{vacation.name}} {{vacation.country}} {{vacation.description}} {{vacation.touristTargets}} {{vacation.cost}}
+    </a>
+    <button class="delete" title="delete vacation"
+            (click)="delete(vacation)">x</button>
+  </li>
+</ul>

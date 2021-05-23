@@ -1,0 +1,18 @@
+<h2>My Destinations</h2>
+
+<div>
+  <label for="vacation-country">Country: </label>
+  <select id="vacation-country" #vacationCountry (change)='onOptionsSelected(
+  vacationCountry.value)'>
+    <option *ngFor="let country of countries" [value]="country">{{country}}</option>
+  </select>
+</div>
+
+<ul class="vacations">
+  <li *ngFor="let vacation of vacations">
+    <a routerLink="/detail/{{vacation.id}}">
+      <span
+        class="badge">{{vacation.id}}</span> {{vacation.name}} {{vacation.country}} {{vacation.description}} {{vacation.touristTargets}} {{vacation.cost}}
+    </a>
+  </li>
+</ul>
